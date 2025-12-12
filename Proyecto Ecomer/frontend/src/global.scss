@@ -1,0 +1,301 @@
+/* ------------------------------------------------------
+   🔵 GLOBAL iOS PREMIUM STYLE — by ChatGPT
+------------------------------------------------------ */
+
+/* Core Ionic CSS */
+@import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional utilities */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/* Dark mode palette */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+/* ------------------------------------------------------
+   🎨 BASE COLORS — Apple Style
+------------------------------------------------------ */
+:root {
+  --ion-background-color: #f2f2f7;
+  --ion-text-color: #000;
+
+  --ios-card-bg: #ffffff;
+  --ios-input-bg: #ffffff;
+
+  --ios-border-color: rgba(0,0,0,0.12);
+  --ios-shadow: 0 4px 14px rgba(0,0,0,0.08);
+
+  --ios-radius: 14px;
+}
+
+/* ------------------------------------------------------
+   🌙 DARK MODE — Apple Pure Black
+------------------------------------------------------ */
+body.dark {
+  --ion-background-color: #000000;
+  --ion-text-color: #ffffff;
+
+  --ios-card-bg: #1c1c1e;
+  --ios-input-bg: #1c1c1e;
+
+  --ios-border-color: rgba(255,255,255,0.12);
+  --ios-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* ------------------------------------------------------
+   🔝 TOOLBAR / HEADER — iOS Navigation Bar
+------------------------------------------------------ */
+ion-header ion-toolbar {
+  --background: #ffffff;
+  --color: #000000;
+  border-bottom: 1px solid var(--ios-border-color);
+  box-shadow: var(--ios-shadow);
+}
+
+body.dark ion-header ion-toolbar {
+  --background: #0d0d0d;
+  --color: #fff;
+}
+
+/* ------------------------------------------------------
+   📄 CONTENT BACKGROUND
+------------------------------------------------------ */
+ion-content {
+  --background: #f2f2f7;
+}
+
+body.dark ion-content {
+  --background: #000;
+}
+
+/* ------------------------------------------------------
+   📝 INPUTS — iOS PREMIUM FIELDS
+------------------------------------------------------ */
+ion-item {
+  --background: var(--ios-input-bg) !important;
+  border-radius: var(--ios-radius);
+  margin: 12px 0;
+  padding-left: 12px;
+  box-shadow: var(--ios-shadow);
+  --inner-padding-end: 12px;
+}
+
+/* Texto del input */
+ion-input::part(input) {
+  color: #000 !important;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+body.dark ion-input::part(input) {
+  color: #fff !important;
+}
+
+/* Placeholder Premium */
+ion-input::part(input)::placeholder {
+  color: #7a7a7a !important;
+  opacity: 1 !important;
+  font-weight: 300;
+}
+
+body.dark ion-input::part(input)::placeholder {
+  color: #b3b3b3 !important;
+}
+
+/* ------------------------------------------------------
+   🔘 BUTTONS — iOS Dark Premium
+------------------------------------------------------ */
+ion-button {
+  --border-radius: 14px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  box-shadow: var(--ios-shadow);
+  margin-top: 12px;
+}
+
+/* Primary (dark) button */
+ion-button[color="dark"] {
+  --background: #000;
+  --color: #ffffff;
+}
+
+ion-button[color="dark"]:active {
+  transform: scale(0.97);
+}
+
+/* Tertiary button (custom Apple blue) */
+ion-button[color="tertiary"] {
+  --background: #007aff;
+  --color: white;
+}
+
+/* ------------------------------------------------------
+   🔲 CARDS — iOS Container Style
+------------------------------------------------------ */
+ion-card {
+  --background: var(--ios-card-bg) !important;
+  border-radius: var(--ios-radius);
+  box-shadow: var(--ios-shadow);
+  padding: 14px;
+}
+
+/* ------------------------------------------------------
+   ➖ SEPARATOR (OR line)
+------------------------------------------------------ */
+.separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.separator span {
+  font-weight: 600;
+  color: #444;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+body.dark .separator span {
+  color: #ccc;
+}
+
+/* ------------------------------------------------------
+   📌 TITLES
+------------------------------------------------------ */
+.title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 15px;
+  color: #000;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: #444;
+}
+
+body.dark .title {
+  color: #fff;
+}
+
+body.dark .subtitle {
+  color: #ccc;
+}
+
+/* ------------------------------------------------------
+   📎 FOOTER TEXT
+------------------------------------------------------ */
+.footer-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-text a {
+  font-weight: 600;
+  color: #007aff;
+}
+
+body.dark .footer-text {
+  color: #aaa;
+}
+
+/* ------------------------------------------------------
+   💫 ANIMATIONS (subtle iOS fade)
+------------------------------------------------------ */
+fade-in {
+  animation: fadeIn 0.35s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+/* 7777777777777777777777777777777777777777777777777777*/
+
+/* =====================================================================
+   🔥 FIX REAL PARA TEXTO Y PLACEHOLDER EN ion-input (Ionic 5 / 6 Shadow DOM)
+   ===================================================================== */
+
+/* LIGHT MODE */
+body:not(.dark) ion-item ion-input .native-input {
+  color: #000 !important; /* texto negro */
+}
+
+body:not(.dark) ion-item ion-input .native-input::placeholder {
+  color: #000 !important; /* placeholder negro */
+  opacity: 1 !important;
+}
+
+/* DARK MODE */
+body.dark ion-item ion-input .native-input {
+  color: #fff !important; /* texto blanco */
+}
+
+body.dark ion-item ion-input .native-input::placeholder {
+  color: #fff !important;
+  opacity: 0.6 !important;
+}
+
+
+
+
+/* 
+888888888888888888888888888888888888*/
+
+/* Título de sección */
+.checkout-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+/* Valor del total */
+.total-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #007aff;
+}
+
+
+/* Botón principal */
+.btn-primary {
+  --background: #007aff !important;
+  --color: #fff !important;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+/* Botón secundario */
+.btn-secondary {
+  --background: #34c759 !important;
+  --color: #fff !important;
+  border-radius: 12px;
+}
+
+/* Botón peligro */
+.btn-danger {
+  --background: #ff3b30 !important;
+  --color: #fff !important;
+  border-radius: 12px;
+}

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Checkout</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h2 class="checkout-title">Datos del Comprador</h2>
+
+  <ion-item>
+    <ion-input
+      placeholder="Nombre completo"
+      [(ngModel)]="customer.name">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      placeholder="Correo"
+      [(ngModel)]="customer.email"
+      type="email">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      placeholder="Dirección"
+      [(ngModel)]="customer.address">
+    </ion-input>
+  </ion-item>
+
+  <ion-item class="total-row">
+    <ion-label>Total a pagar:</ion-label>
+    <ion-text class="total-value">
+      <b>{{ cartTotal | currency:'COP':'symbol-narrow' }}</b>
+    </ion-text>
+  </ion-item>
+
+  <ion-button expand="block" class="btn-primary" (click)="confirmCheckout()">
+    Confirmar Pago
+  </ion-button>
+
+  <ion-button expand="block" class="btn-secondary" (click)="addMoreProducts()">
+    Agregar más productos
+  </ion-button>
+
+  <ion-button expand="block" class="btn-danger" (click)="cancelCheckout()">
+    Cancelar compra
+  </ion-button>
+
+</ion-content>

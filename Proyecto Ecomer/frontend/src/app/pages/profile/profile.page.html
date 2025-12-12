@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Tarjeta del usuario -->
+  <ion-card class="profile-card">
+    <ion-card-content>
+
+      <div class="avatar-container">
+        <img [src]="user.avatar || 'assets/img/default-avatar.png'" alt="Avatar">
+      </div>
+
+      <h2 class="username">{{ user.name }}</h2>
+      <p class="email">{{ user.email }}</p>
+
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Opciones -->
+  <div class="actions">
+
+    <ion-button expand="block" color="primary" (click)="goToHome()">
+      Ir a Home
+    </ion-button>
+
+    <ion-button expand="block" fill="outline" color="medium" (click)="goToCart()">
+      Ver Carrito
+    </ion-button>
+
+  </div>
+
+</ion-content>

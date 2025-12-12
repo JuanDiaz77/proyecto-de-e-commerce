@@ -1,0 +1,100 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+    <!-- Opciones del menú -->
+    <ion-button expand="block" (click)="goToHelp()">Ayuda</ion-button>
+    <ion-button expand="block" (click)="goToOrders()">Pedidos y Devoluciones</ion-button>
+    <ion-button expand="block" (click)="goToAbout()">Quiénes Somos</ion-button>
+    <ion-button expand="block" (click)="goToContact()">Contactarme</ion-button>
+
+    
+    <!-- Botón cerrar sesión -->
+    <ion-button expand="block" color="danger" (click)="logout()">
+      <ion-icon name="log-out-outline" slot="start"></ion-icon>
+      Cerrar sesión
+    </ion-button>
+
+  </ion-content>
+</ion-menu>
+
+
+<!-- CONTENIDO PRINCIPAL -->
+<div class="ion-page" id="main-content">
+
+  <!-- 🔵 HEADER -->
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+      <ion-title>Home</ion-title>
+
+      <!-- Botón de carrito o pago -->
+      <ion-buttons slot="end">
+        <ion-button (click)="goToPayment()">
+          <ion-icon name="card-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+    </ion-toolbar>
+  </ion-header>
+
+
+  <!-- 🔵 CONTENIDO SCROLLEABLE -->
+  <ion-content fullscreen>
+
+    <!-- 🟦 Banner Swiper -->
+    <swiper-container 
+      pagination="true"
+      autoplay="true"
+      loop="true"
+      slides-per-view="1"
+      class="banner-slider">
+
+      <swiper-slide *ngFor="let banner of banners">
+        <div class="banner-card">
+          <img [src]="banner.img" />
+          <h2>{{ banner.title }}</h2>
+          <p>{{ banner.subtitle }}</p>
+        </div>
+      </swiper-slide>
+
+    </swiper-container>
+
+
+    <!-- 🟩 TARJETAS DEL HOME -->
+    <ion-grid [fixed]="true">
+      <ion-row>
+
+        <ion-col size="12" size-md="4" *ngFor="let card of cards">
+          <ion-card>
+            <img [src]="card.img" />
+
+            <ion-card-header>
+              <ion-card-title>{{ card.title }}</ion-card-title>
+              <ion-card-subtitle>{{ card.subtitle }}</ion-card-subtitle>
+            </ion-card-header>
+
+            <ion-card-content>
+              {{ card.description }}
+            </ion-card-content>
+
+            <ion-button expand="block" color="success" (click)="goToPayment(card)">
+              Comprar
+            </ion-button>
+          </ion-card>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+  </ion-content>
+
+</div>

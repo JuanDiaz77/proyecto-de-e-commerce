@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "stripe": "^20.0.0"
+  },
+  "devDependencies": {
+    "@types/stripe": "^8.0.416"
+  }
+}

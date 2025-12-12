@@ -1,0 +1,43 @@
+@use "sass:color";
+
+// Variables
+$primary-color: #419cd8;
+$secondary-color: #f2f2f2;
+
+.cart-container {
+  padding: 20px;
+  background-color: $secondary-color;
+
+  .cart-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: $primary-color;
+    margin-bottom: 10px;
+  }
+
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+
+    .item-name {
+      font-weight: 500;
+    }
+
+    .item-price {
+      color: $primary-color;
+      font-weight: bold;
+    }
+  }
+
+  ion-button.checkout-btn {
+    --background: color.adjust($primary-color, $lightness: -10%);
+    --color: white;
+    margin-top: 20px;
+
+    &:hover {
+      --background: color.adjust($primary-color, $lightness: -15%);
+    }
+  }
+}

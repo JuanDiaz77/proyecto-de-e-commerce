@@ -1,0 +1,62 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h2 class="title">Welcome Back</h2>
+
+  <p class="subtitle">Login with Social Network or Email</p>
+
+  <div class="social-buttons">
+    <ion-button expand="block" fill="solid">
+      <ion-icon name="logo-facebook" slot="start"></ion-icon>
+      Facebook
+    </ion-button>
+
+    <ion-button expand="block" fill="solid">
+      <ion-icon name="logo-twitter" slot="start"></ion-icon>
+      Twitter
+    </ion-button>
+  </div>
+
+  <div class="separator">
+    <span>OR</span>
+  </div>
+
+  <!-- Email -->
+  <ion-item>
+    <ion-input
+      placeholder="Email"
+      type="email"
+      [(ngModel)]="email">
+    </ion-input>
+  </ion-item>
+
+  <!-- Password -->
+  <ion-item>
+    <ion-input
+      placeholder="Password"
+      type="password"
+      [(ngModel)]="password">
+    </ion-input>
+  </ion-item>
+
+  <!-- Login button -->
+  <ion-button expand="block" class="login-btn"  (click)="login()">
+    LOGIN
+  </ion-button>
+
+  <!-- Go to Sign Up -->
+  <div class="footer-text">
+    <p>
+      Don't have an account?
+      <a (click)="goToRegister()">Create one</a>
+    </p>
+  </div>
+
+</ion-content>
