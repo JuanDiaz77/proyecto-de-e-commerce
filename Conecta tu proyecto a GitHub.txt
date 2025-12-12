@@ -1,0 +1,41 @@
+Conecta tu proyecto a GitHub
+
+Crea un repositorio nuevo en GitHub.
+
+Ve a https://github.com/new
+
+Ponle nombre, descripción opcional, y no marques “Initialize with README” (si ya tienes código local).
+
+Copia la URL del repositorio (HTTPS o SSH). Ejemplo:
+
+https://github.com/tu_usuario/mi-proyecto.git
+
+
+En tu terminal de CoderSpace, conecta el repositorio remoto:
+
+git remote add origin https://github.com/tu_usuario/mi-proyecto.git
+
+
+Puedes verificar que se añadió correctamente con:
+
+git remote -v
+
+3️⃣ Añade tus archivos y haz commit
+git add .
+git commit -m "Primer commit: proyecto inicial"
+
+
+git add . agrega todos los archivos al área de preparación.
+
+git commit -m "mensaje" crea un snapshot con un mensaje descriptivo.
+
+4️⃣ Sube tu código a GitHub
+git branch -M main       # Asegúrate de estar en la rama principal 'main'
+git push -u origin main  # Sube tu código al repositorio remoto
+
+
+-u establece origin/main como rama por defecto para futuros git push.
+
+5️⃣ Comprobación
+
+Ve a tu repositorio en GitHub y recarga la página; tus archivos deberían aparecer.
